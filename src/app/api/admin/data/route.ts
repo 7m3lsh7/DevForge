@@ -1,13 +1,9 @@
-import { prisma } from "@/lib/prisma";
+import { teamMembers, projects } from '@/lib/data';
 
 export async function GET() {
-  const members = await prisma.teamMember.findMany();
-  const projects = await prisma.project.findMany();
-  const settings = await prisma.siteSetting.findMany();
-
   return Response.json({
-    members,
-    projects,
-    settings,
+    members: teamMembers,
+    projects: projects,
+    settings: {},
   });
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from './providers';
-import AnimatedBackground from '@/components/AnimatedBackground';
+import AntigravityBackground from '@/components/AntigravityBackground';
 
 export const metadata: Metadata = {
   title: 'DevForge Admin Portfolio',
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <AnimatedBackground />
+          <AntigravityBackground />
           {children}
         </Providers>
       </body>

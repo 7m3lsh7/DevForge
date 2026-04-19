@@ -16,8 +16,8 @@ export default function Team({ members }: { members: any[] }) {
 
         <div className={styles.grid}>
           {members.map((member) => {
-            const githubLink = member.socialLinks.find((l: any) => l.platform.toLowerCase() === 'github');
-            const linkedinLink = member.socialLinks.find((l: any) => l.platform.toLowerCase() === 'linkedin');
+            const githubLink = member.github ? { url: member.github } : null;
+            const linkedinLink = member.linkedin ? { url: member.linkedin } : null;
 
             return (
               <div key={member.id} className={styles.card}>
@@ -39,8 +39,8 @@ export default function Team({ members }: { members: any[] }) {
 
                   {/* Skills */}
                   <div className={styles.skills}>
-                    {member.skills.slice(0, 5).map((skill: any) => (
-                      <span key={skill.id} className={styles.skill}>{skill.name}</span>
+                    {member.skills.slice(0, 5).map((skill: string, index: number) => (
+                      <span key={index} className={styles.skill}>{skill}</span>
                     ))}
                     {member.skills.length > 5 && (
                       <span className={styles.skill}>+{member.skills.length - 5}</span>

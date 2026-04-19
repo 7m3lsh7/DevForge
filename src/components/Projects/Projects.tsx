@@ -60,7 +60,7 @@ export default function Projects({ projects = [] }: { projects?: any[] }) {
 
                 {/* Results */}
                 <div className={styles.results}>
-                  {project.results ? project.results.split(',').slice(0, 2).map((r: string, i: number) => (
+                  {project.results && Array.isArray(project.results) ? project.results.slice(0, 2).map((r: string, i: number) => (
                     <div key={i} className={styles.result}>
                       <span className={styles.resultDot} />
                       {r.trim()}
@@ -70,7 +70,7 @@ export default function Projects({ projects = [] }: { projects?: any[] }) {
 
                 {/* Tags */}
                 <div className={styles.tags}>
-                  {project.technologies ? project.technologies.split(',').map((tag: string, i: number) => (
+                  {project.tags && Array.isArray(project.tags) ? project.tags.map((tag: string, i: number) => (
                     <span key={i} className={styles.tag}>{tag.trim()}</span>
                   )) : null}
                 </div>
