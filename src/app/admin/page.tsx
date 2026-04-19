@@ -12,8 +12,11 @@ export default async function AdminPage() {
   if (!isAdmin) {
     return <AdminLogin />;
   }
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL ||
+  `https://${process.env.VERCEL_URL}`;
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/data`, {
+  const res = await fetch(`${baseUrl}/api/admin/data`, {
     cache: "no-store",
   });
 
