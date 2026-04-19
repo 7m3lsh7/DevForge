@@ -1,3 +1,4 @@
+"use client";
 import { cookies } from "next/headers";
 import AdminLogin from "./AdminLogin";
 import AdminDashboard from "./AdminDashboard";
