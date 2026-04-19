@@ -1,0 +1,150 @@
+.about {}
+
+/* Vision & Mission */
+.vmGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.vmCard {
+  padding: 40px;
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.vmCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.vmCardPrimary {
+  background: linear-gradient(135deg, #660810, #3D0509);
+  border-color: transparent;
+}
+
+.vmCardPrimary .vmTitle,
+.vmCardPrimary .vmText { color: #fff; }
+.vmCardPrimary .vmText { opacity: 0.85; }
+
+.vmIcon { font-size: 36px; margin-bottom: 20px; }
+
+.vmTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+
+.vmText { font-size: 15px; color: var(--fg-muted); line-height: 1.7; }
+
+/* Values */
+.valuesSection { margin-bottom: 64px; }
+
+.valuesTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.valueCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.valueCard:hover {
+  border-color: var(--primary-alpha-25);
+  box-shadow: 0 8px 30px var(--primary-alpha-10);
+  transform: translateY(-3px);
+}
+
+.valueIcon { font-size: 28px; flex-shrink: 0; }
+
+.valueName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 6px;
+}
+
+.valueDesc { font-size: 13px; color: var(--fg-subtle); line-height: 1.6; }
+
+/* Specializations */
+.specSection { text-align: center; }
+
+.specTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 28px;
+}
+
+.specList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.specItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg);
+  transition: all 0.25s ease;
+}
+
+.specItem:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-alpha-5);
+}
+
+.specCheck {
+  width: 22px; height: 22px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .vmGrid { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .valuesGrid { grid-template-columns: 1fr; }
+  .vmCard { padding: 28px; }
+}

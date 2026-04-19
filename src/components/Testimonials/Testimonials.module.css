@@ -1,0 +1,113 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #EBEBEB;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.09);
+  border-color: rgba(102,8,16,0.15);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #660810, #8A0A14);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.card:hover::after { transform: scaleX(1); }
+
+/* Quote icon */
+.quoteIcon { position: absolute; top: 24px; right: 28px; }
+
+/* Stars */
+.stars {
+  font-size: 18px;
+  color: #f59e0b;
+  letter-spacing: 2px;
+}
+
+/* Text */
+.text {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+
+/* Author */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #F0F0F0;
+}
+
+.avatar {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #660810, #3D0509);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.role {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px;
+  background: linear-gradient(135deg, #F9F9F9, #F5F5F5);
+  border-radius: 24px;
+  border: 1px solid #EBEBEB;
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

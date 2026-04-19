@@ -1,0 +1,102 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #660810, #8A0A14);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--primary-alpha-15);
+}
+
+.card:hover::before { transform: scaleX(1); }
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-alpha-5), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.card:hover .hoverOverlay { opacity: 1; }
+
+/* Icon */
+.iconWrap {
+  width: 58px; height: 58px;
+  background: var(--primary-alpha-10);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrap {
+  background: var(--primary);
+  box-shadow: 0 8px 24px var(--primary-alpha-25);
+  transform: scale(1.05);
+}
+
+.icon { font-size: 26px; line-height: 1; transition: filter 0.3s ease; }
+.card:hover .icon { filter: brightness(0) invert(1); }
+
+/* Text */
+.title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--fg);
+  transition: color 0.3s ease;
+}
+
+.description { font-size: 14px; color: var(--fg-muted); line-height: 1.7; flex: 1; }
+
+/* Features */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+
+.check { color: var(--primary); flex-shrink: 0; stroke: var(--primary); }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
