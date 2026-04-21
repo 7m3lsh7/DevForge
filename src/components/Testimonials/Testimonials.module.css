@@ -20,14 +20,16 @@
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 50px rgba(0,0,0,0.09);
-  border-color: rgba(102,8,16,0.15);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.09);
+  border-color: rgba(102, 8, 16, 0.15);
 }
 
 .card::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: linear-gradient(90deg, #660810, #8A0A14);
   transform: scaleX(0);
@@ -35,10 +37,16 @@
   transition: transform 0.35s ease;
 }
 
-.card:hover::after { transform: scaleX(1); }
+.card:hover::after {
+  transform: scaleX(1);
+}
 
 /* Quote icon */
-.quoteIcon { position: absolute; top: 24px; right: 28px; }
+.quoteIcon {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+}
 
 /* Stars */
 .stars {
@@ -66,7 +74,8 @@
 }
 
 .avatar {
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   background: linear-gradient(135deg, #660810, #3D0509);
   color: #fff;
@@ -110,4 +119,8 @@
   color: #1A1A1A;
 }
 
-@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

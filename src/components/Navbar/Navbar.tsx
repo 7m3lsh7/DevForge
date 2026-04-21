@@ -2,20 +2,23 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageToggle from '@/components/LanguageToggle';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/lib/data';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#team', label: 'Team' },
-  { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#team', key: 'team' },
+  { href: '#services', key: 'services' },
+  { href: '#projects', key: 'projects' },
+  { href: '#contact', key: 'contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { language } = useLanguage();
+  const dict = dictionaries[language].nav;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -38,8 +41,9 @@ export default function Navbar() {
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>⟨/⟩</span>
-          <span className={styles.logoText}>DevForge</span>
+          <img src="/images/B7.png" alt="B7 Dev" style={{ width: '36px', height: '36px', objectFit: 'contain', borderRadius: '8px' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
+          <span className={`${styles.logoIcon} hidden`}>B7</span>
+          <span className={styles.logoText}>B7 Dev</span>
         </a>
 
         <nav className={`${styles.nav} ${mobileOpen ? styles.mobileOpen : ''}`}>
@@ -50,13 +54,14 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === link.href ? styles.active : ''}`}
               onClick={(e) => handleNavClick(e, link.href)}
             >
-              {link.label}
+              {dict[link.key as keyof typeof dict]}
             </a>
           ))}
-          <div className="flex items-center gap-4 ml-4">
+          <div className="flex items-center gap-4 ml-4 rtl:mr-4 rtl:ml-0">
+            <LanguageToggle />
             <ThemeToggle />
             <a href="#contact" className={`btn btn-primary btn-sm ${styles.navCta}`} onClick={(e) => handleNavClick(e, '#contact')}>
-              Get In Touch
+              {dict.contact}
             </a>
           </div>
         </nav>

@@ -1,27 +1,25 @@
+'use client';
 import styles from './Footer.module.css';
-
-const footerLinks = {
-  Company: ['About', 'Team', 'Careers', 'Blog'],
-  Services: ['Web Development', 'Mobile Apps', 'UI/UX Design', 'Cloud Deployment'],
-  Projects: ['FinTech Dashboard', 'Healthcare Platform', 'E-Commerce Engine', 'AI Logistics'],
-  Connect: ['GitHub', 'LinkedIn', 'Twitter', 'Dribbble'],
-};
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/lib/data';
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const dict = dictionaries[language].footer;
   const year = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.top}>
-          {/* Brand */}
-          <div className={styles.brand}>
+          <div className={styles.brand} style={{ width: '100%', maxWidth: '600px' }}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>⟨/⟩</span>
-              <span className={styles.logoText}>DevForge</span>
+              <img src="/images/B7.png" alt="B7 Dev" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '12px' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
+              <span className={`${styles.logoIcon} hidden`}>B7</span>
+              <span className={styles.logoText}>B7 Dev</span>
             </div>
             <p className={styles.tagline}>
-              Building scalable digital solutions for modern businesses since 2017.
+              {dict.built}
             </p>
             <div className={styles.socials}>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.social} aria-label="GitHub">
@@ -41,24 +39,10 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Links */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className={styles.linkCol}>
-              <h4 className={styles.colTitle}>{category}</h4>
-              <ul className={styles.linkList}>
-                {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className={styles.link}>{link}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
 
         <div className={styles.bottom}>
-          <span className={styles.copy}>© {year} DevForge Team. All rights reserved.</span>
+          <span className={styles.copy}>{dict.text.replace('2026', String(year))}</span>
           <div className={styles.legal}>
             <a href="#" className={styles.legalLink}>Privacy Policy</a>
             <a href="#" className={styles.legalLink}>Terms of Service</a>

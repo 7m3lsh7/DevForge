@@ -1,21 +1,25 @@
 'use client';
 import styles from './Team.module.css';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/lib/data';
 
-export default function Team({ members }: { members: any[] }) {
+export default function Team() {
+  const { language } = useLanguage();
+  const dict = dictionaries[language].team;
   return (
     <section className={`section section--light`} id="team">
       <div className="container">
         <div className="section-header">
-          <div className="section-label">The People</div>
-          <h2 className="section-title">Meet the <span style={{ color: '#660810' }}>Team</span></h2>
+          <div className="section-label">{dict.label}</div>
+          <h2 className="section-title">{dict.title}</h2>
           <p className="section-subtitle">
-            Six senior engineers, one unified mission — delivering software excellence for businesses that demand the best.
+            {dict.subtitle}
           </p>
         </div>
 
         <div className={styles.grid}>
-          {members.map((member) => {
+          {dict.members.map((member) => {
             const githubLink = member.github ? { url: member.github } : null;
             const linkedinLink = member.linkedin ? { url: member.linkedin } : null;
 
@@ -24,9 +28,15 @@ export default function Team({ members }: { members: any[] }) {
                 <Link href={`/team/${member.id}`} className="block">
                   {/* Avatar */}
                   <div className={styles.avatarWrap}>
-                    <div className={styles.avatar} style={{ background: 'linear-gradient(135deg, #660810 0%, #3D0509 100%)' }}>
-                      {member.name.substring(0, 2).toUpperCase()}
-                    </div>
+                    {member.avatar ? (
+                      <div className={styles.avatar} style={{ overflow: 'hidden', padding: 0 }}>
+                        <img src={member.avatar} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </div>
+                    ) : (
+                      <div className={styles.avatar} >
+                        {member.initials}
+                      </div>
+                    )}
                     <div className={styles.avatarRing} />
                   </div>
 

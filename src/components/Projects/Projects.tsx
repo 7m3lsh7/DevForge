@@ -1,24 +1,28 @@
 'use client';
 import { useState } from 'react';
 import styles from './Projects.module.css';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/lib/data';
 
 const categories = ['All', 'Web Application', 'Enterprise Platform', 'Mobile & Web', 'AI & Machine Learning', 'Mobile Application', 'SaaS Platform'];
 
-export default function Projects({ projects = [] }: { projects?: any[] }) {
+export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const { language } = useLanguage();
+  const dict = dictionaries[language].projects;
 
   const filtered = activeFilter === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeFilter);
+    ? dict.items
+    : dict.items.filter(p => p.category === activeFilter);
 
   return (
     <section className={`section section--white`} id="projects">
       <div className="container">
         <div className="section-header">
-          <div className="section-label">Portfolio</div>
-          <h2 className="section-title">Projects That <span style={{ color: '#660810' }}>Speak for Themselves</span></h2>
+          <div className="section-label">{dict.label}</div>
+          <h2 className="section-title">{dict.title}</h2>
           <p className="section-subtitle">
-            Real solutions for real businesses. Every project here is a story of a challenge conquered.
+            {dict.subtitle}
           </p>
         </div>
 
@@ -37,15 +41,15 @@ export default function Projects({ projects = [] }: { projects?: any[] }) {
 
         {/* Grid */}
         <div className={styles.grid}>
-          {filtered.map((project) => (
-            <div key={project.id} className={`${styles.card} ${project.featured ? styles.featured : ''}`}>
+          {filtered.map((project: any) => (
+            <div key={project.id} className={`${styles.card}`}>
               {/* Visual header */}
               <div className={styles.cardVisual} style={{ background: project.gradient }}>
                 <div className={styles.cardPattern} />
                 <div className={styles.cardCategory}>{project.category}</div>
                 <div className={styles.cardOverlay}>
                   <a href={`/projects/${project.slug}`} className={styles.overlayBtn}>
-                    View Details
+                    {dict.viewDetails}
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -78,7 +82,7 @@ export default function Projects({ projects = [] }: { projects?: any[] }) {
                 {/* Actions */}
                 <div className={styles.actions}>
                   <a href={`/projects/${project.slug}`} className={styles.actionPrimary}>
-                    View Details
+                    {dict.viewDetails}
                   </a>
                   <a href="#" className={styles.actionSecondary}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

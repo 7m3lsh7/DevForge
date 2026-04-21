@@ -1,9 +1,9 @@
-import { teamData } from '@/lib/data';
+import { dictionaries } from '@/lib/data';
 
 export async function getSettings() {
   return {
-    siteName: teamData.name,
-    tagline: teamData.tagline,
-    description: teamData.description,
+    siteName: 'Team B7',
+    tagline: dictionaries.en.hero.titleHighlight,
+    description: dictionaries.en.hero.subtitle,
   };
 }

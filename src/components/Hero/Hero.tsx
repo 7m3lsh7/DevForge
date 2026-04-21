@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Hero.module.css';
-import { teamData } from '@/lib/data';
+import { useLanguage } from '@/context/LanguageContext';
+import { dictionaries } from '@/lib/data';
 
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -38,6 +39,10 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 }
 
 export default function Hero({ settings }: { settings?: any }) {
+  const { language } = useLanguage();
+  const dict = dictionaries[language].hero;
+  const navDict = dictionaries[language].nav;
+
   return (
     <section className={styles.hero} id="home">
       {/* Animated background shapes */}
@@ -51,26 +56,31 @@ export default function Hero({ settings }: { settings?: any }) {
         <div className={styles.left}>
           <div className={`badge ${styles.badge}`}>
             <span className={styles.badgeDot} />
-            Available for New Projects
+            {dict.badge}
           </div>
 
           <h1 className={styles.headline}>
-            {settings?.hero_title || teamData.tagline}
+            {settings?.hero_title || (
+              <>
+                {dict.title}{' '}
+                <span style={{ color: '#660810' }}>{dict.titleHighlight}</span>
+              </>
+            )}
           </h1>
 
           <p className={styles.description}>
-            {settings?.hero_subtitle || teamData.description}
+            {settings?.hero_subtitle || dict.subtitle}
           </p>
 
           <div className={styles.actions}>
             <a href="#projects" className={`btn btn-primary btn-lg ${styles.btnPrimary}`}
               onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-              View Projects
+              {dict.ctaPrimary}
             </a>
             <a href="#contact" className={`btn btn-outline btn-lg ${styles.btnOutline}`}
               onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
-              Contact Us
+              {navDict.contact}
             </a>
           </div>
 
@@ -144,7 +154,7 @@ export default function Hero({ settings }: { settings?: any }) {
       <div className={styles.statsBar}>
         <div className="container">
           <div className={styles.statsGrid}>
-            {teamData.stats.map((stat, i) => (
+            {dict.stats.map((stat, i) => (
               <div key={i} className={styles.statItem}>
                 <div className={styles.statValue}>
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />

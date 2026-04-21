@@ -25,10 +25,10 @@ export default async function HomePage() {
       <main>
         <Hero settings={settings} />
         <About settings={settings} />
-        <Team members={members} />
+        <Team />
         <Skills />
         <Services />
-        <Projects projects={projects} />
+        <Projects />
         <Achievements />
         <Workflow />
         <Testimonials />
