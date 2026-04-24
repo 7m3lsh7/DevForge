@@ -84,6 +84,9 @@ export const dictionaries = {
             { id: '102', title: 'PharmaFlow', category: 'Medical Logistics', description: 'Drug tracking system using QR Codes connecting pharmaceutical companies, distributors, and consumers. Ensures authenticity and traceability.', technologies: 'ASP.NET Core, React, SQL Server, QR Codes', results: 'Verified pharmaceutical supply chain' },
             { id: '103', title: 'Truck Tracking System', category: 'Real-time Tracking', description: 'Live truck location tracking on map with route display from start to destination using real-time data updates.', technologies: 'ASP.NET Core, SignalR, Leaflet.js', results: 'Real-time fleet visibility' }
           ],
+          certificates: [
+            { id: 'c1', title: 'NASA Space Apps Certificate', issuer: 'NASA Space Apps Cairo', image: '/images/f-1.jpg', date: 'Oct 2025' }
+          ],
           github: 'https://github.com/7m3lsh7',
           linkedin: 'https://www.linkedin.com/in/felopater-remon-3a8631354',
           email: 'felopater.remon2020@gmail.com',
@@ -95,23 +98,40 @@ export const dictionaries = {
         },
         {
           id: 'abdelrahman',
-          name: 'Abdelrahman Mahmoud',
-          role: 'Software Developer',
-          location: 'Cairo, Egypt',
-          yearsExperience: '1+ Years',
-          bio: 'Passionate software developer with a strong focus on creating meaningful digital solutions and contributing to team success. Experienced in building modern web applications and working across both frontend and backend systems.',
-          skills: ['React', 'Node.js', 'UI/UX', 'Database Design', 'JavaScript'],
+          name: 'Abdulrahman Mahmoud',
+          role: 'Software Engineer & Programming Instructor',
+          location: 'Egypt',
+          yearsExperience: '3+ Years',
+          bio: 'Software Engineer and Full Stack Web Developer with 3+ years of experience building scalable, high-performance web applications using modern technologies. Specialized in Node.js backend development and creating dynamic, responsive frontend interfaces. Passionate about teaching programming, and currently expanding expertise in Mobile Development (Flutter) and Artificial Intelligence to build intelligent and impactful solutions.',
+          skills: ['Node.js', 'React', 'C#', 'Flutter', 'MongoDB', 'SQL Server'],
           detailedSkills: [
-            { category: 'Frontend', items: ['React', 'JavaScript', 'HTML', 'CSS'] },
-            { category: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs'] },
-            { category: 'Tools', items: ['Git', 'GitHub', 'VS Code'] }
+            { category: 'Languages', items: ['JavaScript', 'C#', 'C++', 'Dart'] },
+            { category: 'Frontend (Web)', items: ['React', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap'] },
+            { category: 'Backend (Web)', items: ['Node.js', 'Express.js', 'REST APIs', 'ASP.NET Core'] },
+            { category: 'Mobile & DB', items: ['Flutter', 'MongoDB', 'SQL Server'] },
+            { category: 'AI & Data', items: ['Machine Learning (Basics)', 'Data Analysis'] },
+            { category: 'Concepts', items: ['OOP', 'SOLID', 'Clean Architecture', 'API Design', 'Auth', 'Data Structures'] },
+            { category: 'Tools', items: ['Git', 'GitHub', 'Postman', 'Figma', 'Azure'] }
           ],
           experience: [
-            { title: 'Full Stack Developer', company: 'B7 Dev Team', type: 'Team Projects', current: true }
+            { title: 'Front-End Developer Intern', company: 'EVA Pharma', type: 'Internship', current: false },
+            { title: 'Team Leader', company: 'NASA Space Apps Cairo (2024 & 2025)', type: 'Hackathons', current: false },
+            { title: 'Backend Member', company: 'Digital Solution Community – CU', type: 'Community', current: true },
+            { title: 'Participant', company: 'EVA AI Hackathon', type: 'Hackathon', current: false }
           ],
-          projects: [],
-          github: 'https://github.com/abdelrahman',
-          linkedin: 'https://linkedin.com/in/abdelrahman',
+          projects: [
+            { id: '1', title: 'ChatLink Platform', category: 'Full Stack App', description: 'Developed a full-stack communication platform with scalable backend APIs and interactive frontend.', technologies: 'React, Node.js, Express.js', results: 'Scalable and interactive communication platform' },
+            { id: '2', title: 'Maintenance Management System', category: 'Backend Architecture', description: 'Designed and implemented backend architecture, APIs, and database system for maintenance operations.', technologies: 'Node.js, MongoDB', results: 'Optimized maintenance operations' },
+            { id: '3', title: 'Medical Representative Helper App', category: 'Desktop App', description: 'Built a desktop application for managing schedules and sales operations.', technologies: 'C#, SQL Server', results: 'Improved sales management' },
+            { id: '4', title: 'Climate Change Game', category: 'System Design', description: 'Contributed to system design, problem solving, and building an interactive solution as Team Leader.', technologies: 'System Design', results: 'NASA Space Apps interactive solution' }
+          ],
+          certificates: [
+            { id: 'c1', title: 'NASA Space Apps Certificate', issuer: 'NASA Space Apps Cairo', image: '/images/A-2.jpg', date: 'Oct 2025' },
+            { id: 'c2', title: 'NASA Space Apps Certificate', issuer: 'NASA Space Apps Cairo', image: '/images/A-3.jpg', date: 'Oct 2024' },
+            { id: 'c3', title: 'EVA AI Hackathon Certificate', issuer: ' EVA AI Hackathon', image: '/images/A-1.jpg', date: 'Oct 2025' }
+          ],
+          github: 'https://github.com/Abdulra1hman',
+          linkedin: 'https://www.linkedin.com/in/abdulrahaman-mahmoud-bb29b0354/',
           avatar: '/images/Abdelrahman.jpeg',
           gradient: 'linear-gradient(135deg, #047857, #10b981)',
           initials: 'AM',
@@ -136,6 +156,7 @@ export const dictionaries = {
           projects: [
             { id: '201', title: 'Prescribto', category: 'Cybersecurity Research', description: 'Security testing and vulnerability research on a medical prescription platform. Full penetration testing, system hardening, and security assessment of all components.', technologies: 'OWASP ZAP, Burp Suite, Security Analysis', results: 'Hardened system against attack vectors' }
           ],
+        
           github: 'https://github.com/xX-Kaneki-Xx',
           linkedin: '',
           email: 'o6972088@gmail.com',
@@ -170,6 +191,9 @@ export const dictionaries = {
           projects: [
             { id: '301', title: 'Trainings Warehouse', category: 'Full Stack Web App', description: 'Led a development team in planning and execution of a full training management system. Contributed as both team leader and full-stack developer managing coordination, system design, and delivery.', technologies: 'Full Stack, MERN, System Design', results: 'Delivered complete training management system' },
             { id: '302', title: 'Doc.StreamLine', category: 'MERN Stack App', description: 'Developed core features using MERN stack for a document streaming platform. Built RESTful APIs, frontend-backend integration, and database layer focused on performance and scalability.', technologies: 'MongoDB, Express.js, React.js, Node.js', results: 'Seamless document management workflow' }
+          ],
+          certificates: [
+            { id: 'c1', title: 'NASA Space Apps Certificate', issuer: 'NASA Space Apps Cairo', image: '/images/n-1.jpg', date: 'Oct 2025' }
           ],
           github: 'https://github.com/noha',
           linkedin: 'https://www.linkedin.com/in/noha-muhammed-754847370/',
@@ -305,6 +329,9 @@ export const dictionaries = {
             { id: '102', title: 'PharmaFlow', category: 'لوجستيات طبية', description: 'نظام تتبع الأدوية باستخدام QR Codes لربط الشركات المصنعة، الموزعين والمستهلكين. يضمن الموثوقية وقابلية التتبع.', technologies: 'ASP.NET Core, React, SQL Server, QR Codes', results: 'سلسلة إمداد موثوقة' },
             { id: '103', title: 'نظام تتبع الشاحنات', category: 'تتبع مباشر', description: 'تتبع مواقع الشاحنات بشكل مباشر على خريطة وتوضيح المسار وتحديث البيانات فوريا.', technologies: 'ASP.NET Core, SignalR, Leaflet.js', results: 'رؤية لحظية للأسطول' }
           ],
+          certificates: [
+            { id: 'c1', title: 'شهادة هاكاثون ناسا', issuer: 'ناسا تطبيقات الفضاء القاهرة', image: '/images/nasa-cert-placeholder.jpg', date: 'أكتوبر 2025' }
+          ],
           github: 'https://github.com/7m3lsh7',
           linkedin: 'https://www.linkedin.com/in/felopater-remon-3a8631354',
           email: 'felopater.remon2020@gmail.com',
@@ -317,22 +344,37 @@ export const dictionaries = {
         {
           id: 'abdelrahman',
           name: 'عبدالرحمن محمود',
-          role: 'مطور برمجيات',
-          location: 'القاهرة، مصر',
-          yearsExperience: '+١ سنوات',
-          bio: 'مطور برمجيات متحمس يركز على إيجاد حلول رقمية هادفة والمساهمة في نجاح فريقه. يتمتع بخبرة في بناء تطبيقات الويب الحديثة والعمل عبر كل من النظم الخلفية والأمامية.',
-          skills: ['React', 'Node.js', 'UI/UX', 'Database Design', 'JavaScript'],
+          role: 'مهندس برمجيات ومدرب برمجة',
+          location: 'مصر',
+          yearsExperience: '+٣ سنوات',
+          bio: 'مهندس برمجيات ومطور ويب شامل بخبرة تزيد عن 3 سنوات في بناء تطبيقات ويب عالية الأداء وقابلة للتطوير باستخدام أحدث التقنيات. متخصص في تطوير الواجهات الخلفية باستخدام Node.js وإنشاء واجهات أمامية ديناميكية ومتجاوبة. شغوف بتعليم البرمجة، ويعمل حالياً على توسيع خبرته في تطوير تطبيقات الهاتف المحمول (Flutter) والذكاء الاصطناعي لبناء حلول ذكية ومؤثرة.',
+          skills: ['Node.js', 'React', 'C#', 'Flutter', 'MongoDB', 'SQL Server'],
           detailedSkills: [
-            { category: 'الواجهات الأمامية', items: ['React', 'JavaScript', 'HTML', 'CSS'] },
-            { category: 'التطوير الخلفي', items: ['Node.js', 'Express.js', 'REST APIs'] },
-            { category: 'الأدوات', items: ['Git', 'GitHub', 'VS Code'] }
+            { category: 'اللغات', items: ['JavaScript', 'C#', 'C++', 'Dart'] },
+            { category: 'التطوير الأمامي', items: ['React', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap'] },
+            { category: 'التطوير الخلفي', items: ['Node.js', 'Express.js', 'REST APIs', 'ASP.NET Core'] },
+            { category: 'الموبايل وقواعد البيانات', items: ['Flutter', 'MongoDB', 'SQL Server'] },
+            { category: 'الذكاء الاصطناعي والبيانات', items: ['Machine Learning (Basics)', 'Data Analysis'] },
+            { category: 'مفاهيم أساسية', items: ['OOP', 'SOLID', 'Clean Architecture', 'API Design', 'Auth', 'Data Structures'] },
+            { category: 'الأدوات', items: ['Git', 'GitHub', 'Postman', 'Figma', 'Azure'] }
           ],
           experience: [
-            { title: 'مطور متكامل', company: 'فريق B7', type: 'مشاريع جماعية', current: true }
+            { title: 'متدرب تطوير واجهات أمامية', company: 'إيفا فارما', type: 'تدريب مهني', current: false },
+            { title: 'قائد فريق', company: 'هاكاثون ناسا القاهرة (2024 و 2025)', type: 'هاكاثون', current: false },
+            { title: 'عضو فريق التطوير الخلفي', company: 'مجتمع الحلول الرقمية - جامعة القاهرة', type: 'مجتمع تقني', current: true },
+            { title: 'مشارك', company: 'هاكاثون إيفا للذكاء الاصطناعي', type: 'هاكاثون', current: false }
           ],
-          projects: [],
-          github: 'https://github.com/abdelrahman',
-          linkedin: 'https://linkedin.com/in/abdelrahman',
+          projects: [
+            { id: '1', title: 'منصة ChatLink', category: 'تطبيق ويب شامل', description: 'تطوير منصة تواصل متكاملة مع واجهات خلفية قابلة للتطوير وواجهات أمامية تفاعلية.', technologies: 'React, Node.js, Express.js', results: 'منصة تواصل تفاعلية وقابلة للتطوير' },
+            { id: '2', title: 'نظام إدارة الصيانة', category: 'تطوير خلفي', description: 'تصميم وتنفيذ البنية الخلفية وواجهات برمجة التطبيقات ونظام قواعد البيانات لعمليات الصيانة.', technologies: 'Node.js, MongoDB', results: 'تحسين كفاءة عمليات الصيانة' },
+            { id: '3', title: 'تطبيق مساعد المندوب الطبي', category: 'تطبيق سطح مكتب', description: 'بناء تطبيق سطح مكتب لإدارة الجداول وعمليات المبيعات.', technologies: 'C#, SQL Server', results: 'تحسين إدارة المبيعات' },
+            { id: '4', title: 'لعبة التغير المناخي', category: 'تصميم أنظمة', description: 'المساهمة في تصميم النظام وحل المشكلات وبناء حل تفاعلي كقائد فريق.', technologies: 'System Design', results: 'حل تفاعلي لتحدي ناسا' }
+          ],
+          certificates: [
+            { id: 'c1', title: 'شهادة هاكاثون ناسا', issuer: 'ناسا تطبيقات الفضاء القاهرة', image: '/images/nasa-cert-placeholder.jpg', date: 'أكتوبر 2025' }
+          ],
+          github: 'https://github.com/Abdulra1hman',
+          linkedin: 'https://www.linkedin.com/in/abdulrahaman-mahmoud-bb29b0354/',
           avatar: '/images/Abdelrahman.jpeg',
           gradient: 'linear-gradient(135deg, #047857, #10b981)',
           initials: 'AM',
@@ -356,6 +398,9 @@ export const dictionaries = {
           ],
           projects: [
             { id: '201', title: 'Prescribto', category: 'بحث أمن سيبراني', description: 'الاختبارات الأمنية وبحوث نقاط الضعف في منصة للوصفات الطبية. اختبار اختراق كامل، وتقوية النظام والتقييم الأمني لجميع المكونات.', technologies: 'OWASP ZAP, Burp Suite, Security Analysis', results: 'تقوية النظام ضد نواقل الهجوم' }
+          ],
+          certificates: [
+            { id: 'c1', title: 'شهادة هاكاثون ناسا', issuer: 'ناسا تطبيقات الفضاء القاهرة', image: '/images/nasa-cert-placeholder.jpg', date: 'أكتوبر 2025' }
           ],
           github: 'https://github.com/xX-Kaneki-Xx',
           linkedin: '',
@@ -391,6 +436,9 @@ export const dictionaries = {
           projects: [
             { id: '301', title: 'مستودع التدريبات', category: 'تطبيق ويب شامل', description: 'قيادة وتنفيذ نظام متكامل لإدارة التدريب كقائد فريق ومطور شامل بتنسيق المهام وتفعيل التصميم.', technologies: 'Full Stack, MERN, System Design', results: 'تسليم نظام شامل للتدريب' },
             { id: '302', title: 'Doc.StreamLine', category: 'تطبيق MERN', description: 'تطوير الميزات الأساسية لواجهة وتطبيقات المخدم، وضبط قواعد البيانات مع التركيز على الأداء والمرونة العالية.', technologies: 'MongoDB, Express.js, React.js, Node.js', results: 'نظام إدارة وثائق مرن' }
+          ],
+          certificates: [
+            { id: 'c1', title: 'شهادة هاكاثون ناسا', issuer: 'ناسا تطبيقات الفضاء القاهرة', image: '/images/nasa-cert-placeholder.jpg', date: 'أكتوبر 2025' }
           ],
           github: 'https://github.com/noha',
           linkedin: 'https://linkedin.com/in/noha',

@@ -10,7 +10,7 @@ import { dictionaries } from '@/lib/data';
 export default function TeamMemberClient({ id }: { id: string }) {
   const { language } = useLanguage();
   const dict = dictionaries[language].team;
-  const [isZoomed, setIsZoomed] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   
   const member = dict.members.find((m) => String(m.id) === id);
 
@@ -42,32 +42,12 @@ export default function TeamMemberClient({ id }: { id: string }) {
               <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary-600 to-primary-400 opacity-20 blur-2xl"></div>
                 {member.avatar ? (
-                  <>
-                    <img 
-                      src={member.avatar} 
-                      alt={member.name} 
-                      onClick={() => setIsZoomed(true)}
-                      className="w-full h-full object-cover rounded-3xl border-2 border-white/50 dark:border-white/10 shadow-2xl cursor-zoom-in transition-transform duration-300 hover:scale-[1.03] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]" 
-                    />
-                    {isZoomed && (
-                      <div 
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md animate-in fade-in duration-300"
-                        onClick={() => setIsZoomed(false)}
-                      >
-                        <img 
-                          src={member.avatar} 
-                          alt={member.name} 
-                          className="max-w-[90vw] max-h-[90vh] object-contain rounded-3xl shadow-2xl cursor-zoom-out border border-white/20 animate-in zoom-in-95 duration-300"
-                        />
-                        <button 
-                          className="absolute top-6 right-6 text-white/50 hover:text-white bg-black/50 hover:bg-black/80 w-12 h-12 rounded-full flex items-center justify-center transition-colors"
-                          onClick={() => setIsZoomed(false)}
-                        >
-                          ✕
-                        </button>
-                      </div>
-                    )}
-                  </>
+                  <img 
+                    src={member.avatar} 
+                    alt={member.name} 
+                    onClick={() => setZoomedImage(member.avatar)}
+                    className="w-full h-full object-cover rounded-3xl border-2 border-white/50 dark:border-white/10 shadow-2xl cursor-zoom-in transition-transform duration-300 hover:scale-[1.03] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]" 
+                  />
                 ) : (
                   <div 
                     className="w-full h-full rounded-3xl flex items-center justify-center text-6xl text-white font-bold shadow-2xl border border-white/20"
@@ -220,9 +200,65 @@ export default function TeamMemberClient({ id }: { id: string }) {
               </MotionDiv>
             )}
 
+            {/* Certificates Showcase */}
+            {member.certificates && member.certificates.length > 0 && (
+              <MotionDiv initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}>
+                <div className="bg-white/60 dark:bg-black/40 backdrop-blur-2xl rounded-3xl p-8 border border-white dark:border-white/10 shadow-xl">
+                  <h2 className="text-2xl font-bold mb-8 flex items-center gap-3 text-gray-900 dark:text-white">
+                    <Award className="text-primary-500" /> {language === 'ar' ? 'الشهادات والاعتمادات' : 'Certificates & Awards'}
+                  </h2>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {member.certificates.map((cert: any) => (
+                      <div key={cert.id} className="group relative overflow-hidden bg-white dark:bg-zinc-800/80 rounded-2xl border border-gray-100 dark:border-white/5 shadow-md hover:shadow-xl hover:border-primary-500/30 transition-all duration-300 flex flex-col cursor-zoom-in" onClick={() => setZoomedImage(cert.image)}>
+                        <div className="aspect-[4/3] w-full overflow-hidden bg-gray-100 dark:bg-zinc-900">
+                          {cert.image && (
+                            <img src={cert.image} alt={cert.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                          )}
+                        </div>
+                        <div className="p-5">
+                          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">{cert.title}</h3>
+                          <div className="flex justify-between items-center mt-2">
+                            <span className="text-sm font-medium text-primary-600 dark:text-primary-400">{cert.issuer}</span>
+                            <span className="text-xs text-gray-500 dark:text-gray-400 font-semibold bg-gray-100 dark:bg-zinc-700 px-2 py-1 rounded-md">{cert.date}</span>
+                          </div>
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <div className="bg-white/20 backdrop-blur-md p-3 rounded-full text-white shadow-xl transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                            <ExternalLink size={24} />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </MotionDiv>
+            )}
+
           </div>
         </div>
       </main>
+
+      {/* Global Lightbox for Avatars & Certificates */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md animate-in fade-in duration-300 p-4"
+          onClick={() => setZoomedImage(null)}
+        >
+          <img 
+            src={zoomedImage} 
+            alt="Zoomed preview" 
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-3xl shadow-2xl cursor-zoom-out border border-white/20 animate-in zoom-in-95 duration-300"
+          />
+          <button 
+            className="absolute top-6 right-6 text-white hover:bg-white/20 bg-black/50 w-12 h-12 rounded-full flex items-center justify-center transition-colors shadow-lg"
+            onClick={() => setZoomedImage(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
     </div>
   );
 }

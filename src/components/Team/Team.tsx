@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import styles from './Team.module.css';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
@@ -7,8 +8,10 @@ import { dictionaries } from '@/lib/data';
 export default function Team() {
   const { language } = useLanguage();
   const dict = dictionaries[language].team;
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   return (
-    <section className={`section section--light`} id="team">
+    <>
+      <section className={`section section--light`} id="team">
       <div className="container">
         <div className="section-header">
           <div className="section-label">{dict.label}</div>
@@ -30,7 +33,17 @@ export default function Team() {
                   <div className={styles.avatarWrap}>
                     {member.avatar ? (
                       <div className={styles.avatar} style={{ overflow: 'hidden', padding: 0 }}>
-                        <img src={member.avatar} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img 
+                          src={member.avatar} 
+                          alt={member.name} 
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.1)', filter: 'contrast(1.05)' }} 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setZoomedImage(member.avatar);
+                          }}
+                          className="cursor-zoom-in transition-transform duration-500 hover:scale-[1.2]"
+                        />
                       </div>
                     ) : (
                       <div className={styles.avatar} >
@@ -86,5 +99,26 @@ export default function Team() {
         </div>
       </div>
     </section>
+      
+      {/* Lightbox for zooming avatars */}
+      {zoomedImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md animate-in fade-in duration-300 p-4"
+          onClick={() => setZoomedImage(null)}
+        >
+          <img 
+            src={zoomedImage} 
+            alt="Zoomed preview" 
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-3xl shadow-2xl cursor-zoom-out border border-white/20 animate-in zoom-in-95 duration-300"
+          />
+          <button 
+            className="absolute top-6 right-6 text-white/50 hover:text-white bg-black/50 hover:bg-black/80 w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+            onClick={() => setZoomedImage(null)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
+    </>
   );
 }
