@@ -9,7 +9,7 @@ export const dictionaries = {
       contact: 'Contact',
     },
     hero: {
-      badge: 'B7 Development Team',
+      badge: 'P7 Development Team',
       title: 'Turning Skills Into',
       titleHighlight: 'Real-World Value',
       subtitle: 'We are a passionate software development team formed through our school. We aim to deliver high-quality digital solutions while continuously improving through real projects and challenges.',
@@ -55,7 +55,7 @@ export const dictionaries = {
     },
     team: {
       label: 'The People',
-      title: 'Meet Team B7',
+      title: 'Meet Team P7',
       subtitle: 'Four dedicated developers driven by a shared vision of digital excellence.',
       members: [
         {
@@ -77,7 +77,7 @@ export const dictionaries = {
           experience: [
             { title: 'Intern', company: 'Eva Pharma', type: 'Professional Internship · Jul 2025 – Present', current: true },
             { title: 'Participant', company: 'NASA Space Apps Cairo', type: 'Hackathon · Oct 2025', current: false },
-            { title: 'Full Stack Developer', company: 'B7 Dev Team', type: 'Team Projects', current: true }
+            { title: 'Full Stack Developer', company: 'P7 Dev Team', type: 'Team Projects', current: true }
           ],
           projects: [
             { id: '101', title: 'ChatLink', category: 'Real-time Web App', description: 'A real-time chat system with instant messaging, file sharing, and media transfer. Secure authentication using modern protocols.', technologies: 'ASP.NET Core, SignalR, React, SQL Server', results: 'Instant messaging with secure channels' },
@@ -186,7 +186,7 @@ export const dictionaries = {
           experience: [
             { title: 'Team Leader & Full Stack Developer', company: 'Trainings Warehouse Project', type: 'Academic Project', current: false },
             { title: 'MERN Stack Developer', company: 'Doc.StreamLine Project', type: 'Team Project', current: false },
-            { title: 'Software Developer', company: 'B7 Dev Team', type: 'Team Projects', current: true }
+            { title: 'Software Developer', company: 'P7 Dev Team', type: 'Team Projects', current: true }
           ],
           projects: [
             { id: '301', title: 'Trainings Warehouse', category: 'Full Stack Web App', description: 'Led a development team in planning and execution of a full training management system. Contributed as both team leader and full-stack developer managing coordination, system design, and delivery.', technologies: 'Full Stack, MERN, System Design', results: 'Delivered complete training management system' },
@@ -206,7 +206,7 @@ export const dictionaries = {
     projects: {
       label: 'Portfolio',
       title: 'Our Featured Work',
-      subtitle: 'Real solutions crafted by Team B7 for real-world scenarios.',
+      subtitle: 'Real solutions crafted by Team P7 for real-world scenarios.',
       viewDetails: 'View Details',
       techStack: 'Tech Stack',
       items: [
@@ -222,7 +222,7 @@ export const dictionaries = {
           results: ['Instant messaging', 'Secure channels'],
           challenge: 'Handling real-time persistent connections sustainably without data leaks.',
           solution: 'Implemented SignalR with a robust ASP.NET backend to handle active sockets securely.',
-          team: ['Felopater Remon', 'Team B7']
+          team: ['Felopater Remon', 'Team P7']
         },
         {
           id: 'p2',
@@ -236,12 +236,12 @@ export const dictionaries = {
           results: ['Improved tracking accuracy', 'Automated supply chain checks'],
           challenge: 'Strict logging and precise inventory alignment for medical supplies.',
           solution: 'A highly structured SQL relational DB coupled with a responsive React dashboard for swift updates.',
-          team: ['Felopater Remon', 'Team B7']
+          team: ['Felopater Remon', 'Team P7']
         }
       ]
     },
     footer: {
-      text: '© 2026 Team B7. All rights reserved.',
+      text: '© 2026 Team P7. All rights reserved.',
       built: 'Built with passion & modern technologies.',
     }
   },
@@ -254,7 +254,7 @@ export const dictionaries = {
       contact: 'تواصل معنا',
     },
     hero: {
-      badge: 'فريق B7 للتطوير',
+      badge: 'فريق P7 للتطوير',
       title: 'تحويل المهارات إلى',
       titleHighlight: 'قيمة حقيقية',
       subtitle: 'نحن فريق تطوير برمجيات شغوف، تشكل من خلال مدرستنا. نهدف إلى تقديم حلول رقمية عالية الجودة مع التحسين المستمر من خلال المشاريع والتحديات الواقعية.',
@@ -300,7 +300,7 @@ export const dictionaries = {
     },
     team: {
       label: 'الأعضاء',
-      title: 'تعرف على فريق B7',
+      title: 'تعرف على فريق P7',
       subtitle: 'أربعة مطورين مكرسين يدفعهم شغف مشترك للتميز الرقمي.',
       members: [
         {
@@ -322,7 +322,7 @@ export const dictionaries = {
           experience: [
             { title: 'متدرب', company: 'إيفا فارما', type: 'تدريب مهني · يوليو 2025 – الحاضر', current: true },
             { title: 'مشارك', company: 'هاكاثون ناسا القاهرة', type: 'هاكاثون · أكتوبر 2025', current: false },
-            { title: 'مطور متكامل', company: 'فريق B7', type: 'مشاريع جماعية', current: true }
+            { title: 'مطور متكامل', company: 'فريق P7', type: 'مشاريع جماعية', current: true }
           ],
           projects: [
             { id: '101', title: 'ChatLink', category: 'تطبيق ويب', description: 'نظام دردشة في الوقت الحقيقي مع المراسلة الفورية ومشاركة الملفات والميديا. مصادقة آمنة باستخدام بروتوكولات حديثة.', technologies: 'ASP.NET Core, SignalR, React, SQL Server', results: 'قنوات آمنة ومراسلة فورية' },
@@ -431,7 +431,7 @@ export const dictionaries = {
           experience: [
             { title: 'قائد فريق و مطور متكامل', company: 'مشروع Trainings Warehouse', type: 'مشروع أكاديمي', current: false },
             { title: 'مطور MERN', company: 'مشروع Doc.StreamLine', type: 'مشروع جماعي', current: false },
-            { title: 'مطور برمجيات', company: 'فريق B7', type: 'مشاريع جماعية', current: true }
+            { title: 'مطور برمجيات', company: 'فريق P7', type: 'مشاريع جماعية', current: true }
           ],
           projects: [
             { id: '301', title: 'مستودع التدريبات', category: 'تطبيق ويب شامل', description: 'قيادة وتنفيذ نظام متكامل لإدارة التدريب كقائد فريق ومطور شامل بتنسيق المهام وتفعيل التصميم.', technologies: 'Full Stack, MERN, System Design', results: 'تسليم نظام شامل للتدريب' },
@@ -467,7 +467,7 @@ export const dictionaries = {
           results: ['مراسلة فورية', 'قنوات آمنة'],
           challenge: 'التعامل مع اتصالات فورية متزامنة بدون تسريب للبيانات.',
           solution: 'تنفيذ SignalR مع خلفية ASP.NET قوية.',
-          team: ['فيلوباتير ريمون', 'فريق B7']
+          team: ['فيلوباتير ريمون', 'فريق P7']
         },
         {
           id: 'p2',
@@ -481,12 +481,12 @@ export const dictionaries = {
           results: ['تحسين دقة التتبع', 'فحص آلي للإمداد'],
           challenge: 'سجلات دقيقة وجرد معقد للإمدادات الطبية.',
           solution: 'قاعدة بيانات علائقية متماسكة مع وحدة تحكم React ديناميكية.',
-          team: ['فيلوباتير ريمون', 'فريق B7']
+          team: ['فيلوباتير ريمون', 'فريق P7']
         }
       ]
     },
     footer: {
-      text: '© ٢٠٢٦ فريق B7. جميع الحقوق محفوظة.',
+      text: '© ٢٠٢٦ فريق P7. جميع الحقوق محفوظة.',
       built: 'تمت البرمجة بشغف وبأحدث التقنيات.',
     }
   }

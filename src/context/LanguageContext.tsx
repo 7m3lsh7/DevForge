@@ -17,7 +17,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Check localStorage or browser preference on mount
-    const savedLang = localStorage.getItem('b7-lang') as Language;
+    const savedLang = localStorage.getItem('P7-lang') as Language;
     if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
       handleLanguageChange(savedLang);
     } else {
@@ -29,7 +29,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const handleLanguageChange = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('b7-lang', lang);
+    localStorage.setItem('P7-lang', lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   };

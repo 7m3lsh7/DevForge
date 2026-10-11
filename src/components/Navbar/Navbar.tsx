@@ -41,9 +41,8 @@ export default function Navbar() {
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
         <a href="/" className={styles.logo}>
-          <img src="/images/B7.png" alt="B7 Dev" style={{ width: '36px', height: '36px', objectFit: 'contain', borderRadius: '8px' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
-          <span className={`${styles.logoIcon} hidden`}>B7</span>
-          <span className={styles.logoText}>B7 Dev</span>
+          <span className={`${styles.logoIcon} hidden`}>P7</span>
+          <span className={styles.logoText}>P7 Dev</span>
         </a>
 
         <nav className={`${styles.nav} ${mobileOpen ? styles.mobileOpen : ''}`}>
