@@ -22,7 +22,7 @@ export default function TeamMemberClient({ id }: { id: string }) {
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/40 dark:bg-black/40 border-b border-black/5 dark:border-white/10">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <div className="text-xl font-display font-bold text-gray-900 dark:text-white">
-            <Link href="/">B7 Team</Link>
+            <Link href="/">P7 Team</Link>
           </div>
           <Link href="/#team" className="flex items-center gap-2 text-sm font-medium hover:text-primary-500 transition-colors">
             {language === 'ar' ? 'عودة' : 'Back'} <ArrowLeft size={16} className="rtl:rotate-180" />
