@@ -14,9 +14,9 @@ export default function Footer() {
         <div className={styles.top}>
           <div className={styles.brand} style={{ width: '100%', maxWidth: '600px' }}>
             <div className={styles.logo}>
-              <img src="/images/B7.png" alt="B7 Dev" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '12px' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
-              <span className={`${styles.logoIcon} hidden`}>B7</span>
-              <span className={styles.logoText}>B7 Dev</span>
+              <img src="/images/P7.png" alt="P7 Dev" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '12px' }} onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling?.classList.remove('hidden'); }} />
+              <span className={`${styles.logoIcon} hidden`}>P7</span>
+              <span className={styles.logoText}>P7 Dev</span>
             </div>
             <p className={styles.tagline}>
               {dict.built}
